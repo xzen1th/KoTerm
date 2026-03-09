@@ -24,7 +24,15 @@ fun main()
     {
         println()
 
-        print(settings.settings["prompt"])
+        when
+        {
+            settings.settings["prompt"] == $$"$HOME" ->
+            {
+                TODO("PRINT PWD")
+            }
+            else -> print(settings.settings["prompt"])
+        }
+
         val command: String? = readlnOrNull()
 
         if (command.isNullOrEmpty()) continue

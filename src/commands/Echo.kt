@@ -11,6 +11,7 @@ object Echo : Command
 
     override fun execute(args: List<String>?)
     {
-        println(args?.joinToString(" "))
+        if(args.isNullOrEmpty()) return
+        println(args.joinToString(" "))
     }
 }
