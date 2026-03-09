@@ -1,4 +1,6 @@
+package misc
+
 object Status
 {
-    TODO("Add status codes")
+    // TODO("Add status codes")
 }

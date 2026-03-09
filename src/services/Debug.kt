@@ -1,3 +1,5 @@
+package services
+
 abstract class Debug()
 {
     fun logToFile(status: Int)

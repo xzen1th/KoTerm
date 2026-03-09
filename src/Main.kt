@@ -10,7 +10,14 @@ fun main()
     val settings = Settings()
     settings.initSettings()
 
-    if(settings.settings["debug"] == "true") println("\n${settings}")
+    if(settings.settings["debug"] == "true")
+    {
+        println("${Colors.GREEN}=================================${Colors.RESET}")
+        println("Settings:\n")
+        println("${settings}")
+        println("${Colors.GREEN}=================================${Colors.RESET}")
+    }
+
 
     val pwd = settings.settings["start_dir"]
 
