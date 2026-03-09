@@ -13,17 +13,17 @@ fun main()
     if(settings.settings["debug"] == "true")
     {
         println("${Colors.GREEN}=================================${Colors.RESET}")
-        println("Settings:\n")
-        println("${settings}")
+        println("${Colors.BRIGHT_MAGENTA}Ko${Colors.BRIGHT_BLUE}Term ${Colors.BRIGHT_GREEN}Settings:${Colors.RESET}\n")
+        println("$settings")
         println("${Colors.GREEN}=================================${Colors.RESET}")
     }
-
 
     val pwd = settings.settings["start_dir"]
 
     while (true)
     {
         println()
+
         print(settings.settings["prompt"])
         val command: String? = readlnOrNull()
 
