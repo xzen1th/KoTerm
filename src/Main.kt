@@ -1,6 +1,7 @@
 import misc.Colors
 
 import services.Settings
+import commands.Commands
 
 fun main()
 {
@@ -9,13 +10,18 @@ fun main()
     val settings = Settings()
     settings.initSettings()
 
-    settings.settings["pwd"] = System.getProperty("user.dir")
-
     if(settings.settings["debug"] == "true") println("\n${settings}")
 
-    /*while (true)
+    val pwd = settings.settings["start_dir"]
+
+    while (true)
     {
         println()
         print(settings.settings["prompt"])
-    }*/
+        val command: String? = readlnOrNull()
+
+        if (command.isNullOrEmpty()) continue
+
+        Commands.executeCommand(command.trim().split(" "))
+    }
 }

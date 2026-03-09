@@ -5,7 +5,6 @@ import java.io.File
 class Settings
 {
     val settings: MutableMap<String, String> = mutableMapOf()
-    lateinit var pwd: String
 
     fun initSettings()
     {
@@ -35,7 +34,7 @@ class Settings
     {
         settingsFile.createNewFile()
         settings["prompt"] = "koterm> "
-        settings["pwd"] = settingsDir.parent
+        settings["start_dir"] = settingsDir.parent
         settings["history_size"] = "10"
         settings["history_file"] = "history.koterm"
         settings["debug"] = "true"

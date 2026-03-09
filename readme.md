@@ -20,15 +20,14 @@ git clone https://github.com/kostya05983/KoTerm.git
 ### 2. With `kotlinc` 🔜
 # Features / TODO
 
-- [ ] History
 - [ ] Autocompletion
 - [ ] Simple syntax highlighting
 - [ ] Commands
   - [ ] history
   - [ ] clear/cls
-  - [ ] exit
+  - [x] exit
   - [ ] help
-  - [ ] echo
+  - [x] echo
   - [ ] cd
   - [ ] ls
   - [ ] pwd
@@ -38,6 +37,7 @@ git clone https://github.com/kostya05983/KoTerm.git
   - [ ] time
   - [ ] aliases
   - [ ] alias
+  - [ ] etc...
 
 # Support
 Since this project was built primary for learning purposes, I am highly open to code reviews, suggestions, and feedback!
