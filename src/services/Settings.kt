@@ -2,10 +2,14 @@ package services
 
 import java.io.File
 
-class Settings
+/*
+* Settings -> Settings for KoTerm
+* initSettings -> check if there is a koterm folder with settings
+* loadSettings -> load settings from a file
+* createSettingsFile -> create a settings file
+* */
+class Settings(private val settings: MutableMap<String, String> = mutableMapOf())
 {
-    val settings: MutableMap<String, String> = mutableMapOf()
-
     fun initSettings()
     {
         val homeDir = System.getProperty("user.home")
@@ -48,5 +52,8 @@ class Settings
         settings.forEach {(key, value) -> builder.append("${key}=${value}\n")}
         return builder.toString()
     }
+
+    fun get(key: String) = settings[key]
+    fun set(key: String, value: String) = value.also { settings[key] = it }
 
 }

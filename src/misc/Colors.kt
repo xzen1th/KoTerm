@@ -1,5 +1,8 @@
 package misc
 
+/*
+* Colors object for text.
+* */
 object Colors
 {
     const val RESET             = "\u001B[0m"

@@ -5,6 +5,7 @@ import kotlin.system.exitProcess
 
 object Exit : Command
 {
+    /* exit command -> just shut down KoTerm */
     override val command: String = "exit"
     override val description: String = "Exit KoTerm"
     override val args: MutableMap<String, String>? = null

@@ -4,7 +4,8 @@ import interfaces.Command
 
 object Commands
 {
-    val commands: MutableMap<String, Command> = mutableMapOf(
+    /* Each command is saved in MutableMap -> it's not optimal for RAM, I will figure the other way later */
+    private val commands: MutableMap<String, Command> = mutableMapOf(
         "exit" to Exit,
         "echo" to Echo,
         "pwd" to Pwd

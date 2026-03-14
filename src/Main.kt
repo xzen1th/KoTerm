@@ -2,6 +2,7 @@ import misc.Colors
 
 import services.Settings
 import commands.Commands
+import services.Debug
 
 fun main()
 {
@@ -10,15 +11,9 @@ fun main()
     val settings = Settings()
     settings.initSettings()
 
-    if(settings.settings["debug"] == "true")
-    {
-        println("${Colors.GREEN}=================================${Colors.RESET}")
-        println("${Colors.BRIGHT_MAGENTA}Ko${Colors.BRIGHT_BLUE}Term ${Colors.BRIGHT_GREEN}Settings:${Colors.RESET}\n")
-        println("$settings")
-        println("${Colors.GREEN}=================================${Colors.RESET}")
-    }
+    if(settings.get("debug") == "true") Debug().printSettings(settings)
 
-    val pwd = settings.settings["start_dir"]
+    val pwd = settings.get("start_dir")
 
     while (true)
     {
@@ -26,17 +21,28 @@ fun main()
 
         when
         {
-            settings.settings["prompt"] == $$"$HOME" ->
+            settings.get("prompt") == $$"$HOME" ->
             {
                 TODO("PRINT PWD")
             }
-            else -> print(settings.settings["prompt"])
+            else -> print(settings.get("prompt"))
         }
 
-        val command: String? = readlnOrNull()
+        try
+        {
+            val command: String? = readlnOrNull()
 
-        if (command.isNullOrEmpty()) continue
+            if (command.isNullOrEmpty()) continue
 
-        Commands.executeCommand(command.trim().split(" "))
+            Commands.executeCommand(command.trim().split(" "))
+        }
+        catch (e: Exception)
+        {
+            println("${Colors.RED}Error: ${e.message}${Colors.RESET}")
+            e.printStackTrace();
+        }
+        finally { continue }
+
+
     }
 }

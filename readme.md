@@ -1,5 +1,9 @@
 # KoTerm
 <img src="/img/koterm_screen.png"><br>
+
+# Status
+This project is currently in development.
+
 # What is KoTerm?
 KoTerm is a lightweight REPL terminal built entirely in **Kotlin**.\
 This project is developed for learning purpose – 
@@ -26,7 +30,7 @@ git clone https://github.com/kostya05983/KoTerm.git
 - [ ] Commands
   - [ ] history
   - [ ] clear/cls
-  - [ ] exit
+  - [x] exit
   - [ ] help
   - [x] echo
   - [ ] cd
